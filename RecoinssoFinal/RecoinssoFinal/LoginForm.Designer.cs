@@ -153,6 +153,7 @@
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUser);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -167,12 +168,12 @@
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnNewUser;
-        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblIniciarSesion;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtUser;
     }
 }
 

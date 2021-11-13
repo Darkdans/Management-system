@@ -48,9 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\ClientesDA.cs" />
     <Compile Include="DataAccess\conexionDA.cs" />
+    <Compile Include="DataAccess\MainMenuDA.cs" />
     <Compile Include="DataAccess\newUserDA.cs" />
+    <Compile Include="DataAccess\TecnicoDA.cs" />
+    <Compile Include="Logica\clientesLB.cs" />
     <Compile Include="Logica\newUserLB.cs" />
+    <Compile Include="Logica\tecnicosLB.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,19 +64,82 @@
     </Compile>
     <Compile Include="Logica\Core.cs" />
     <Compile Include="Logica\loginLB.cs" />
+    <Compile Include="Presentación\Clientes\ClientesAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\Clientes\ClientesAlta.Designer.cs">
+      <DependentUpon>ClientesAlta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\Clientes\ClientesControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\Clientes\ClientesControl.Designer.cs">
+      <DependentUpon>ClientesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\Clientes\ClientesDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\Clientes\ClientesDetalle.Designer.cs">
+      <DependentUpon>ClientesDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\mainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\mainMenu.Designer.cs">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\NewUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentación\NewUser.Designer.cs">
       <DependentUpon>NewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\Tecnicos\TecnicosAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\Tecnicos\TecnicosAlta.Designer.cs">
+      <DependentUpon>TecnicosAlta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\Tecnicos\TecnicosControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\Tecnicos\TecnicosControl.Designer.cs">
+      <DependentUpon>TecnicosControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\Tecnicos\TecnicosDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\Tecnicos\TecnicosDetalle.Designer.cs">
+      <DependentUpon>TecnicosDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\Clientes\ClientesAlta.resx">
+      <DependentUpon>ClientesAlta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\Clientes\ClientesControl.resx">
+      <DependentUpon>ClientesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\Clientes\ClientesDetalle.resx">
+      <DependentUpon>ClientesDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\mainMenu.resx">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\NewUser.resx">
       <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\Tecnicos\TecnicosAlta.resx">
+      <DependentUpon>TecnicosAlta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\Tecnicos\TecnicosControl.resx">
+      <DependentUpon>TecnicosControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\Tecnicos\TecnicosDetalle.resx">
+      <DependentUpon>TecnicosDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,6 +172,111 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ciudad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iniciar-sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\segumiento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ser1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ser2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ser3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ser4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ser5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ser6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ser7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ser8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\servicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tecnicos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tickets-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

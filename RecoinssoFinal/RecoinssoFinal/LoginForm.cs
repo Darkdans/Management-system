@@ -15,7 +15,9 @@ namespace RecoinssoFinal
 {
     public partial class LoginForm : Form
     {
+        loginLB objloginLB = new loginLB();
         conexionDA conexion = new conexionDA();
+        MainMenu mainMenu = new MainMenu();
         Core core = new Core();
         public LoginForm()
         {
@@ -36,7 +38,6 @@ namespace RecoinssoFinal
         //Se recuperan los valores insertados en la interfaz gráfica y se pasan en un objeto//
         private loginLB recuperarInformación()
         {
-            loginLB objloginLB = new loginLB();
             objloginLB.usuario = txtUser.Text;
             objloginLB.password = txtPassword.Text;
             return objloginLB;
@@ -47,7 +48,6 @@ namespace RecoinssoFinal
             NewUser newUserForm = new NewUser();
             this.Hide();
             newUserForm.Show();
-            
         }
     }
 }

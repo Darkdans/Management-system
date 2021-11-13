@@ -19,4 +19,6 @@ namespace RecoinssoFinal.Logica
             System.Windows.MessageBox.Show(mensaje, caption, this.buttonOK, icon);
         }
     }
+
+
 }
