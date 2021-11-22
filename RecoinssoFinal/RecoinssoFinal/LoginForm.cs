@@ -15,8 +15,8 @@ namespace RecoinssoFinal
 {
     public partial class LoginForm : Form
     {
-        loginLB objloginLB = new loginLB();
-        conexionDA conexion = new conexionDA();
+        LoginLB objloginLB = new LoginLB();
+        ConexionDA conexion = new ConexionDA();
         MainMenu mainMenu = new MainMenu();
         Core core = new Core();
         public LoginForm()
@@ -24,19 +24,8 @@ namespace RecoinssoFinal
             InitializeComponent();
         }
 
-
-        private void btnLogin_Click(object sender, EventArgs e) {
-            string Usuario = txtUser.Text;
-            string Password = txtPassword.Text;
-            if (String.IsNullOrEmpty(Usuario) || String.IsNullOrEmpty(Password) ) {
-                core.messageBox("Los campos no pueden estar vacios, intentalo de nuevo.");
-            } else {
-                conexion.logins(recuperarInformación());
-            }
-        }
-
         //Se recuperan los valores insertados en la interfaz gráfica y se pasan en un objeto//
-        private loginLB recuperarInformación()
+        private LoginLB recuperarInformación()
         {
             objloginLB.usuario = txtUser.Text;
             objloginLB.password = txtPassword.Text;
@@ -45,9 +34,23 @@ namespace RecoinssoFinal
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
-            NewUser newUserForm = new NewUser();
+            Presentación.Registrarse newUserForm = new Presentación.Registrarse();
             this.Hide();
             newUserForm.Show();
+        }
+
+        private void bntLogin_Click(object sender, EventArgs e)
+        {
+            string Usuario = txtUser.Text;
+            string Password = txtPassword.Text;
+            if (String.IsNullOrEmpty(Usuario) || String.IsNullOrEmpty(Password))
+            {
+                core.messageBox("Los campos no pueden estar vacios, intentalo de nuevo.");
+            }
+            else
+            {
+                conexion.logins(recuperarInformación());
+            }
         }
     }
 }

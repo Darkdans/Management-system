@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace RecoinssoFinal.Logica
 {
-    internal class clientesLB
+    internal class ClientesLB
     {
         public int ID { get; set; }
         public string nombre { get; set; }
-        public int telefono { get; set; }
+        public string telefono { get; set; }
         public string correo { get; set; }
-        public string rfc { get; set; }
+        public string equipo { get; set; }
+        public byte[] Foto { get; set; }
+        public string direccion { get; set; }
     }
 }

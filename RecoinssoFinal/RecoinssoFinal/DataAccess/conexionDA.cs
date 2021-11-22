@@ -16,7 +16,7 @@ using System.Configuration;
 namespace RecoinssoFinal.DataAccess
 {
 
-    internal class conexionDA
+    internal class ConexionDA
     {
         string connectionData = ConfigurationManager.ConnectionStrings["connectionProperties"].ConnectionString;
         SqlConnection Conexion;
@@ -27,7 +27,23 @@ namespace RecoinssoFinal.DataAccess
             this.Conexion = new SqlConnection(this.connectionData);
             return this.Conexion;
         }
-
+        public bool ejecturarComandosSinRetornoDatos(SqlCommand SQLComando)
+        {
+            try
+            {
+                SqlCommand Comando = SQLComando;
+                Comando.Connection = this.EstablecerConexión();
+                Conexion.Open();
+                Comando.ExecuteNonQuery();
+                Conexion.Close();
+                return true;
+            }
+            catch
+            {
+                core.messageBox("Ha ocurrido un error al realizar la consulta");
+                return false;
+            }
+        }
         public bool ejecturarComandosSinRetornoDatos(SqlCommand SQLComando, String mensajeBox)
         {
             try
@@ -46,6 +62,7 @@ namespace RecoinssoFinal.DataAccess
                 return false;
             }
         }
+
         /*SELECT (Retorno de datos) */
         public DataSet EjecutarSentencia(SqlCommand sqlCommand)
         {
@@ -67,24 +84,25 @@ namespace RecoinssoFinal.DataAccess
                 return DS;
             }
         }
-        public void logins(loginLB loginLB)
+
+        public void logins(LoginLB loginLB)
         {
             try
             {
                 using (SqlConnection conexion = new SqlConnection(connectionData))
                 {
                     conexion.Open();
-                    using (SqlCommand commando = new SqlCommand("SELECT puesto, usuario, password FROM Usuarios WHERE usuario = '" + loginLB.usuario + "' AND password ='" + loginLB.password + "'", conexion)) { 
+                    using (SqlCommand commando = new SqlCommand("SELECT puestoID, usuario, password FROM Usuarios WHERE usuario = '" + loginLB.usuario + "' AND password ='" + loginLB.password + "'", conexion)) { 
                         SqlDataReader registro = commando.ExecuteReader();
 
                         if (registro.Read()) {
                             core.messageBox("Login exitoso.");
                             LoginForm loginForm = new LoginForm();
                             loginForm.Hide();
-                            mainMenu mainMenu = new mainMenu();
-                            mainMenu.lblUser.Text = registro["usuario"].ToString();
-                            mainMenu.lblPuesto.Text = "Puesto: " + registro["puesto"].ToString();
-                            mainMenu.Show();
+                            VentanaPrincipal menu = new VentanaPrincipal();
+                            menu.lblUser.Text = "Usuario: " + registro["usuario"].ToString();
+                            menu.lblPuesto.Text = registro["puestoID"].ToString();
+                            menu.Show();
                         }
                         else {
                             core.messageBox("Datos incorrectos.");
@@ -97,5 +115,6 @@ namespace RecoinssoFinal.DataAccess
                 System.Windows.MessageBox.Show(ex.ToString());
             }
         }
+
     }
 }

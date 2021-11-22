@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RecoinssoFinal.Logica
 {
-    internal class loginLB
+    internal class LoginLB
     {
         public string usuario { get; set; }
         public string password { get; set; }

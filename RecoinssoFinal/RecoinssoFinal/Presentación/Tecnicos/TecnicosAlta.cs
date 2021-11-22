@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace RecoinssoFinal.Presentación.Tecnicos
         string mensajeBox = "Los campos no pueden estar vacios.";
         Core core = new Core();
         TecnicoDA objTecnicoDA = new TecnicoDA();
+        private byte[] imagenByte;
         public TecnicosAlta()
         {
             InitializeComponent();
@@ -38,32 +40,21 @@ namespace RecoinssoFinal.Presentación.Tecnicos
             {
                 objTecnicoDA.Agregar(RecuperarInformación());
                 LimpiarEntradas();
-                DialogResult dialogResult = MessageBox.Show("Será enviado a Control de técnicos.", "Mensaje del sistema", MessageBoxButtons.OK);
-                TecnicosControl objTecnicosControl = new TecnicosControl();
-                this.Hide();
-                objTecnicosControl.Show();
             }
 
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            TecnicosControl tecnicosControl = new TecnicosControl();
-            this.Hide();
-            tecnicosControl.Show();
-        }
-
-        private tecnicosLB RecuperarInformación()
+        private TecnicosLB RecuperarInformación()
         {
             //Se recuperan los valores insertados en la interfaz gráfica y se pasan en un objeto//
-            tecnicosLB tecnicosLB = new tecnicosLB();
-            int phone = 0; int.TryParse(txtTelefono.Text, out phone);
+            TecnicosLB tecnicosLB = new TecnicosLB();
             tecnicosLB.nombre = txtNombre.Text;
-            tecnicosLB.telefono = phone;
+            tecnicosLB.telefono = txtTelefono.Text;
             tecnicosLB.correo = txtCorreo.Text;
             tecnicosLB.rfc = txtRFC.Text;
             tecnicosLB.especialidad = txtEspecialidad.Text;
             tecnicosLB.puesto = txtPuesto.Text;
+            tecnicosLB.Foto = imagenByte;
             return tecnicosLB;
         }
 
@@ -75,6 +66,26 @@ namespace RecoinssoFinal.Presentación.Tecnicos
             txtRFC.Text = "";
             txtEspecialidad.Text = "";
             txtPuesto.Text = "";
+            PictureFoto.Image = null;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarEntradas();
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog selectorImagen = new OpenFileDialog();
+            selectorImagen.Title = "Seleccionar imagen";
+
+            if (selectorImagen.ShowDialog() == DialogResult.OK)
+            {
+                PictureFoto.Image = Image.FromStream(selectorImagen.OpenFile());
+                MemoryStream memoria = new MemoryStream();
+                PictureFoto.Image.Save(memoria, System.Drawing.Imaging.ImageFormat.Png);
+                imagenByte = memoria.ToArray();
+            }
         }
     }
 }

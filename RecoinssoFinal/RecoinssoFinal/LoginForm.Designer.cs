@@ -30,14 +30,14 @@
         {
             this.lblUser = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnNewUser = new System.Windows.Forms.Button();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblIniciarSesion = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnNewUser = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(550, 198);
+            this.lblUser.Location = new System.Drawing.Point(550, 151);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(46, 13);
             this.lblUser.TabIndex = 0;
@@ -54,47 +54,27 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(550, 268);
+            this.lblContraseña.Location = new System.Drawing.Point(550, 221);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(64, 13);
             this.lblContraseña.TabIndex = 1;
             this.lblContraseña.Text = "Contraseña;";
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(553, 328);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(205, 23);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Iniciar Sesión";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // btnNewUser
-            // 
-            this.btnNewUser.Location = new System.Drawing.Point(553, 379);
-            this.btnNewUser.Name = "btnNewUser";
-            this.btnNewUser.Size = new System.Drawing.Size(205, 23);
-            this.btnNewUser.TabIndex = 3;
-            this.btnNewUser.Text = "Crear cuenta nueva";
-            this.btnNewUser.UseVisualStyleBackColor = true;
-            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
-            // 
             // txtUser
             // 
             this.txtUser.AcceptsTab = true;
-            this.txtUser.Location = new System.Drawing.Point(553, 214);
+            this.txtUser.Location = new System.Drawing.Point(553, 167);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(205, 20);
-            this.txtUser.TabIndex = 4;
+            this.txtUser.TabIndex = 1;
             // 
             // txtPassword
             // 
             this.txtPassword.AcceptsTab = true;
-            this.txtPassword.Location = new System.Drawing.Point(553, 284);
+            this.txtPassword.Location = new System.Drawing.Point(553, 237);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(205, 20);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblIniciarSesion
@@ -106,6 +86,15 @@
             this.lblIniciarSesion.TabIndex = 6;
             this.lblIniciarSesion.Text = "Iniciar Sesión";
             this.lblIniciarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(592, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(196, 43);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Reparaciones de computadoras e instalación y soporte de redes.";
             // 
             // pictureBox2
             // 
@@ -127,14 +116,37 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // btnNewUser
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(592, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 43);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Reparaciones de computadoras e instalación y soporte de redes.";
+            this.btnNewUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(142)))), ((int)(((byte)(236)))));
+            this.btnNewUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(142)))), ((int)(((byte)(236)))));
+            this.btnNewUser.FlatAppearance.BorderSize = 0;
+            this.btnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewUser.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnNewUser.Location = new System.Drawing.Point(553, 348);
+            this.btnNewUser.Name = "btnNewUser";
+            this.btnNewUser.Size = new System.Drawing.Size(205, 25);
+            this.btnNewUser.TabIndex = 4;
+            this.btnNewUser.Text = "Crear cuenta nueva";
+            this.btnNewUser.UseVisualStyleBackColor = false;
+            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(187)))), ((int)(((byte)(137)))));
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(142)))), ((int)(((byte)(236)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnLogin.Location = new System.Drawing.Point(553, 303);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(205, 25);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "Iniciar sesión";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.bntLogin_Click);
             // 
             // LoginForm
             // 
@@ -142,14 +154,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 416);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnNewUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblIniciarSesion);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.btnNewUser);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUser);
             this.Name = "LoginForm";
@@ -166,14 +178,14 @@
 
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnNewUser;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblIniciarSesion;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.Button btnNewUser;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 

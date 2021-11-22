@@ -12,10 +12,10 @@ namespace RecoinssoFinal.DataAccess
 {
     internal class ClientesDA
     {
-        conexionDA conexion;
+        ConexionDA conexion;
         public ClientesDA()
         {
-            conexion = new conexionDA();
+            conexion = new ConexionDA();
         }
 
         public DataSet MostrarClientes()
@@ -24,31 +24,35 @@ namespace RecoinssoFinal.DataAccess
             return conexion.EjecutarSentencia(sentencia);
         }
 
-        public bool Agregar(clientesLB objClientesLB)
+        public bool Agregar(ClientesLB objClientesLB)
         {
             string mensajeBox = "Se ha agregado los datos correctamente.";
-            SqlCommand SQLComando = new SqlCommand("INSERT INTO Clientes (nombre, telefono, correo, rfc) VALUES (@Nombre, @Telefono, @Correo, @RFC)");
+            SqlCommand SQLComando = new SqlCommand("INSERT INTO Clientes (nombre, telefono, correo, equipo, foto, direccion) VALUES (@Nombre, @Telefono, @Correo, @Equipo, @Foto, @Direccion)");
             SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objClientesLB.nombre;
-            SQLComando.Parameters.Add("@Telefono", SqlDbType.Int).Value = objClientesLB.telefono;
+            SQLComando.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = objClientesLB.telefono;
             SQLComando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = objClientesLB.correo;
-            SQLComando.Parameters.Add("@RFC", SqlDbType.VarChar).Value = objClientesLB.rfc;
+            SQLComando.Parameters.Add("@Equipo", SqlDbType.VarChar).Value = objClientesLB.equipo;
+            SQLComando.Parameters.Add("@Foto", SqlDbType.Image).Value = objClientesLB.Foto;
+            SQLComando.Parameters.Add("@Direccion", SqlDbType.VarChar).Value = objClientesLB.direccion;
             return conexion.ejecturarComandosSinRetornoDatos(SQLComando, mensajeBox);
         }
 
-        public bool Modificar(clientesLB objClientesLB)
+        public bool Modificar(ClientesLB objClientesLB)
         {
             string mensajeBox = "Se ha modificado los datos correctamente.";
-            SqlCommand SQLComando = new SqlCommand("UPDATE Clientes SET nombre = @Nombre, telefono = @Telefono, correo = @Correo, rfc = @RFC" +
+            SqlCommand SQLComando = new SqlCommand("UPDATE Clientes SET nombre = @Nombre, telefono = @Telefono, correo = @Correo, equipo = @Equipo, foto = @Foto, direccion = @Direccion" +
                 " WHERE [ID-Cliente] = @ID");
             SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = objClientesLB.ID;
             SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objClientesLB.nombre;
-            SQLComando.Parameters.Add("@Telefono", SqlDbType.Int).Value = objClientesLB.telefono;
+            SQLComando.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = objClientesLB.telefono;
             SQLComando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = objClientesLB.correo;
-            SQLComando.Parameters.Add("@RFC", SqlDbType.VarChar).Value = objClientesLB.rfc;
+            SQLComando.Parameters.Add("@Equipo", SqlDbType.VarChar).Value = objClientesLB.equipo;
+            SQLComando.Parameters.Add("@Foto", SqlDbType.Image).Value = objClientesLB.Foto;
+            SQLComando.Parameters.Add("@Direccion", SqlDbType.VarChar).Value = objClientesLB.direccion;
             return conexion.ejecturarComandosSinRetornoDatos(SQLComando, mensajeBox);
         }
 
-        public bool Eliminar(clientesLB objClientesLB)
+        public bool Eliminar(ClientesLB objClientesLB)
         {
             string mensajeBox = "Se ha eliminado los datos correctamente.";
             SqlCommand SQLComando = new SqlCommand("DELETE FROM Clientes WHERE [ID-Cliente] = @ID");
