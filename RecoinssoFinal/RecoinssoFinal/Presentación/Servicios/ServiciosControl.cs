@@ -36,6 +36,7 @@ namespace RecoinssoFinal.Presentación.Servicios
             dgvServicios.Columns[1].HeaderText = "Nombre";
             dgvServicios.Columns[2].HeaderText = "Costo";
             dgvServicios.Columns[3].HeaderText = "Descripción";
+            dgvServicios.Columns[6].HeaderText = "Tiempo (Días)";
         }
 
         private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
@@ -64,6 +65,7 @@ namespace RecoinssoFinal.Presentación.Servicios
                 {
                     Console.WriteLine("Cannot convert a Null to a Byte.");
                 }
+                txtDias.Text = dgvServicios.Rows[indice].Cells[6].Value.ToString();
             }
         }
         public void LimpiarEntradas()
@@ -72,6 +74,7 @@ namespace RecoinssoFinal.Presentación.Servicios
             txtNombre.Text = "";
             txtCosto.Text = "";
             txtDescripcion.Text = "";
+            txtDias.Text = "";
             PictureFoto.Image = null;
 
             //Activar/desactivar botones según lo que se requiera //
@@ -132,11 +135,13 @@ namespace RecoinssoFinal.Presentación.Servicios
         {
             //Se recuperan los valores insertados en la interfaz gráfica y se pasan en un objeto//
             int ID = 0; int.TryParse(lblID.Text, out ID);
+            int Dias = 0; int.TryParse(txtDias.Text, out Dias);
             serviciosLB.ID = ID;
             serviciosLB.nombre = txtNombre.Text;
             serviciosLB.costo = txtCosto.Text;
             serviciosLB.descripcion = txtDescripcion.Text;
             serviciosLB.Foto = imagenByte;
+            serviciosLB.dias = Dias;
             return serviciosLB;
         }
     }

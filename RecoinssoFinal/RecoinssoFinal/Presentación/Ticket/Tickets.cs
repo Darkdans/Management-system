@@ -12,11 +12,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RecoinssoFinal.Presentación.Reportes
+namespace RecoinssoFinal.Presentación.Ticket
 {
-    public partial class Pagos : Form
+    public partial class Tickets : Form
     {
-        public Pagos()
+        public Tickets()
         {
             InitializeComponent();
             RefrescarGrid();
@@ -34,34 +34,38 @@ namespace RecoinssoFinal.Presentación.Reportes
         }
 
         string mensajeBox = "Los campos con * son importantes y no pueden estar vacios.";
-        PagosDA pagosDA = new PagosDA();
+        TicketsDA ticketsDA = new TicketsDA();
         ReportesLB reportesLB = new ReportesLB();
 
         public void RefrescarGrid()
         {
             //Se traen los elementos de la base de datos para refrescar la tabla.//
-            dgvPagos.DataSource = pagosDA.MostrarReportesEstadoPago().Tables[0];
-            dgvPagos.Columns[0].Visible = false; //ID-Reporte-ID/
-            dgvPagos.Columns[1].Visible = false; //ID-Cliente/
-            dgvPagos.Columns[8].Visible = false; //ID-EstadoPago/
-            dgvPagos.Columns[9].Visible = false; //ID-Pagos/
-            dgvPagos.Columns[10].Visible = false; //ID-Pagos/
-            dgvPagos.Columns[11].Visible = false; //ID-Pagos/
-            dgvPagos.Columns[12].Visible = false; //ID-Pagos/
+            dgvTickets.DataSource = ticketsDA.MostrarReportesEstadoPago().Tables[0];
+            dgvTickets.Columns[0].Visible = false; //ID-Reporte-ID/
+            dgvTickets.Columns[1].Visible = false; //ID-Cliente/
+        
             //Se renombran los encabezados//
-            dgvPagos.Columns[2].HeaderText = "Folio";
-            dgvPagos.Columns[3].HeaderText = "Cliente";
-            dgvPagos.Columns[4].HeaderText = "Equipo";
-            dgvPagos.Columns[5].HeaderText = "Detalle del equipo";
-            dgvPagos.Columns[6].HeaderText = "Detalle del problema";
-            dgvPagos.Columns[7].HeaderText = "Solución propuesta";
-            dgvPagos.Columns[13].HeaderText = "Estado de pago";
+            dgvTickets.Columns[2].HeaderText = "Folio";
+            dgvTickets.Columns[3].HeaderText = "Cliente";
+            dgvTickets.Columns[4].HeaderText = "Equipo";
+            dgvTickets.Columns[5].HeaderText = "Detalle del equipo";
+            dgvTickets.Columns[6].HeaderText = "Detalle del problema";
+            dgvTickets.Columns[7].HeaderText = "Solución propuesta";
+            dgvTickets.Columns[8].Visible = false; //ID-EstadoPago/
+            dgvTickets.Columns[9].Visible = false; //ID-EstadoTicket/
+            dgvTickets.Columns[10].Visible = false; //ID-servicio/
+            dgvTickets.Columns[11].Visible = false; //fecha/
+            dgvTickets.Columns[12].Visible = false; //ID-Pago/
+           
+            dgvTickets.Columns[13].HeaderText = "Estado de pago";
+            dgvTickets.Columns[14].Visible = false; //ID-EstadoTicket/
+            dgvTickets.Columns[15].HeaderText = "Estado de ticket";
         }
 
         private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
         {
             int indice = e.RowIndex;
-            dgvPagos.ClearSelection();
+            dgvTickets.ClearSelection();
             //Validación para que escoga solo elementos de la fila//
             if (indice >= 0)
             {
@@ -70,37 +74,38 @@ namespace RecoinssoFinal.Presentación.Reportes
 
                 cbxReporte.DataSource = null;
                 cbxReporte.Items.Clear();
-                cbxEstadoPago.DataSource = null;
-                cbxEstadoPago.Items.Clear();
+                cbxEstadoTicket.DataSource = null;
+                cbxEstadoTicket.Items.Clear();
 
-                lblID.Text = dgvPagos.Rows[indice].Cells[0].Value.ToString();
-                lblIDClientes.Text = dgvPagos.Rows[indice].Cells[1].Value.ToString();
-                txtCliente.Text = dgvPagos.Rows[indice].Cells[3].Value.ToString();
-                txtEquipo.Text = dgvPagos.Rows[indice].Cells[4].Value.ToString();
-                txtDescripcionEquipo.Text = dgvPagos.Rows[indice].Cells[5].Value.ToString();
-                txtDetalle.Text = dgvPagos.Rows[indice].Cells[6].Value.ToString();
-                txtSolución.Text = dgvPagos.Rows[indice].Cells[7].Value.ToString();
+                lblID.Text = dgvTickets.Rows[indice].Cells[0].Value.ToString();
+                lblIDClientes.Text = dgvTickets.Rows[indice].Cells[1].Value.ToString();
+                txtCliente.Text = dgvTickets.Rows[indice].Cells[3].Value.ToString();
+                txtEquipo.Text = dgvTickets.Rows[indice].Cells[4].Value.ToString();
+                txtDescripcionEquipo.Text = dgvTickets.Rows[indice].Cells[5].Value.ToString();
+                txtDetalle.Text = dgvTickets.Rows[indice].Cells[6].Value.ToString(); //Detalle del problema/
+                txtSolución.Text = dgvTickets.Rows[indice].Cells[7].Value.ToString();
+                txtEstadoPago.Text = dgvTickets.Rows[indice].Cells[13].Value.ToString();
                 RegistroSeleccionadoComboboxReportes(indice);
-                RegistroSeleccionadoComboboxEstadoPagos(indice);
+                RegistroSeleccionadoComboboxEstadoTicket(indice);
             }
         }
 
         public void RegistroSeleccionadoComboboxReportes(int indice)
         {
-            int IDReporte = 0; int.TryParse(dgvPagos.Rows[indice].Cells[0].Value.ToString(), out IDReporte);
-            cbxReporte.DataSource = pagosDA.MostrarReportes().Tables[0];
+            int IDReporte = 0; int.TryParse(dgvTickets.Rows[indice].Cells[0].Value.ToString(), out IDReporte);
+            cbxReporte.DataSource = ticketsDA.MostrarReportes().Tables[0];
             cbxReporte.DisplayMember = "folio";
             cbxReporte.ValueMember = "reportesID";
             cbxReporte.SelectedValue = IDReporte;
         }
 
-        public void RegistroSeleccionadoComboboxEstadoPagos(int indice)
+        public void RegistroSeleccionadoComboboxEstadoTicket(int indice)
         {
-            int IDEstadoPago = 0; int.TryParse(dgvPagos.Rows[indice].Cells[8].Value.ToString(), out IDEstadoPago);
-            cbxEstadoPago.DataSource = pagosDA.MostrarEstadoPago().Tables[0];
-            cbxEstadoPago.DisplayMember = "Estado";
-            cbxEstadoPago.ValueMember = "ID_Pagos";
-            cbxEstadoPago.SelectedValue = IDEstadoPago;
+            int IDEstadoTicket = 0; int.TryParse(dgvTickets.Rows[indice].Cells[14].Value.ToString(), out IDEstadoTicket);
+            cbxEstadoTicket.DataSource = ticketsDA.MostrarEstadoTicket().Tables[0];
+            cbxEstadoTicket.DisplayMember = "Nombre";
+            cbxEstadoTicket.ValueMember = "EstadoTicketID";
+            cbxEstadoTicket.SelectedValue = IDEstadoTicket;
         }
 
         private ReportesLB RecuperarInformación()
@@ -108,24 +113,31 @@ namespace RecoinssoFinal.Presentación.Reportes
             //Se recuperan los valores insertados en la interfaz gráfica y se pasan en un objeto//
             int reportesID = 0;
             int clienteID = 0;
+            int EstadoTicketID = 0;
             int EstadoPagoID = 0;
+            dateTimePickerInicio.Format = DateTimePickerFormat.Custom;
+            dateTimePickerInicio.CustomFormat = "dd/MM/yyyy";
+            DateTime theDate = this.dateTimePickerInicio.Value.Date;
             int.TryParse(lblID.Text, out reportesID);
             if (cbxReporte.SelectedValue != null)
             {
                 int.TryParse(cbxReporte.SelectedValue.ToString(), out clienteID);
             }
-            if (cbxEstadoPago.SelectedValue != null)
+            if (cbxEstadoTicket.SelectedValue != null)
             {
-                int.TryParse(cbxEstadoPago.SelectedValue.ToString(), out EstadoPagoID);
+                int.TryParse(cbxEstadoTicket.SelectedValue.ToString(), out EstadoTicketID);
             }
-            reportesLB.estadoPago = EstadoPagoID;
+            int.TryParse(txtEstadoPago.Text, out EstadoPagoID);
+            reportesLB.estadoTicket = EstadoTicketID;
             reportesLB.ID_ReporteProblema = reportesID;
             reportesLB.ID_Cliente = clienteID;
             reportesLB.NombreCliente = cbxReporte.Text;
             reportesLB.Equipo = txtEquipo.Text;
+            reportesLB.estadoPago = EstadoPagoID;
             reportesLB.DetalleEquipo = txtDescripcionEquipo.Text;
             reportesLB.DetalleProblema = txtDetalle.Text;
             reportesLB.Solucion = txtSolución.Text;
+            reportesLB.fecha = theDate;
             return reportesLB;
         }
 
@@ -136,8 +148,11 @@ namespace RecoinssoFinal.Presentación.Reportes
             txtDescripcionEquipo.Text = "";
             txtDetalle.Text = "";
             txtSolución.Text = "";
+            txtEstadoPago.Text = "";
+            txtCliente.Text = "";
+            txtTiempoEstimado.Text = "";
             CargarComboboxReporte(); //Lo pone en el indice 0 al ser pocos registros//
-            CargarComboboxEstadoPago();
+            CargarComboboxEstadoTicket();
             //Activar/desactivar botones según lo que se requiera //
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
@@ -145,16 +160,16 @@ namespace RecoinssoFinal.Presentación.Reportes
         }
         public void CargarComboboxReporte()
         {
-            cbxReporte.DataSource = pagosDA.MostrarReportes().Tables[0];
+            cbxReporte.DataSource = ticketsDA.MostrarReportes().Tables[0];
             cbxReporte.DisplayMember = "folio";
             cbxReporte.ValueMember = "reportesID";
         }
 
-        public void CargarComboboxEstadoPago()
+        public void CargarComboboxEstadoTicket()
         {
-            cbxEstadoPago.DataSource = pagosDA.MostrarEstadoPago().Tables[0];
-            cbxEstadoPago.DisplayMember = "Estado";
-            cbxEstadoPago.ValueMember = "ID_Pagos";
+            cbxEstadoTicket.DataSource = ticketsDA.MostrarEstadoTicket().Tables[0];
+            cbxEstadoTicket.DisplayMember = "Nombre";
+            cbxEstadoTicket.ValueMember = "EstadoTicketID";
         }
 
         public void LLenarFormConReporteSeleccionado()
@@ -173,7 +188,7 @@ namespace RecoinssoFinal.Presentación.Reportes
                     using (SqlConnection conexion = new SqlConnection(connectionData))
                     {
                         conexion.Open();
-                        using (SqlCommand commando = new SqlCommand("SELECT solucion, folio, nombreCliente, equipo, detalleEquipo, detalleProblema, estadoPago  FROM reportes WHERE [reportesID] = " + IDReporte, conexion))
+                        using (SqlCommand commando = new SqlCommand("SELECT dias, estadoTicket, nombreCliente, equipo, detalleEquipo, detalleProblema, solucion, estadoTicket.Nombre, TicketsPagos.Estado FROM reportes LEFT JOIN TicketsPagos ON reportes.estadoPago = TicketsPagos.ID_Pagos JOIN Servicios ON Reportes.servicioID = Servicios.[ID-servicios] JOIN estadoTicket ON Reportes.estadoTicket = estadoTicket.EstadoTicketID WHERE [reportesID] = " + IDReporte, conexion))
                         {
                             SqlDataReader registro = commando.ExecuteReader();
                             if (registro.Read())
@@ -183,14 +198,13 @@ namespace RecoinssoFinal.Presentación.Reportes
                                 txtDescripcionEquipo.Text = registro["detalleEquipo"].ToString();
                                 txtDetalle.Text = registro["detalleProblema"].ToString();
                                 txtSolución.Text = registro["solucion"].ToString();
-                                string Pago = registro["estadoPago"].ToString();
-                                if (!String.IsNullOrEmpty(Pago))
-                                {
-                                    cbxEstadoPago.DataSource = pagosDA.MostrarEstadoPago().Tables[0];
-                                    cbxEstadoPago.DisplayMember = "Estado";
-                                    cbxEstadoPago.ValueMember = "ID_Pagos";
-                                    cbxEstadoPago.SelectedValue = registro["estadoPago"].ToString();
-                                }
+                                txtEstadoPago.Text = registro["Estado"].ToString();
+                                txtTiempoEstimado.Text = registro["dias"].ToString();
+
+                                cbxEstadoTicket.DataSource = ticketsDA.MostrarEstadoTicket().Tables[0];
+                                cbxEstadoTicket.DisplayMember = "Nombre";
+                                cbxEstadoTicket.ValueMember = "EstadoTicketID";
+                                cbxEstadoTicket.SelectedValue = registro["estadoTicket"].ToString();
                             }
                         }
                     }
@@ -212,28 +226,28 @@ namespace RecoinssoFinal.Presentación.Reportes
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            string EstadoPago = cbxEstadoPago.Text;
+            string EstadoTicket = cbxEstadoTicket.Text;
             string Reporte = cbxReporte.Text;
             string Equipo = txtEquipo.Text;
             string Cliente = txtCliente.Text;
             string DetalleEquipo = txtDescripcionEquipo.Text;
             string DetalleProblema = txtDetalle.Text;
             string Solucion = txtSolución.Text;
-            if (String.IsNullOrEmpty(EstadoPago) || String.IsNullOrEmpty(Solucion) || String.IsNullOrEmpty(Reporte) || String.IsNullOrEmpty(Equipo) || String.IsNullOrEmpty(Cliente) || String.IsNullOrEmpty(DetalleEquipo) || String.IsNullOrEmpty(DetalleProblema))
+            if (String.IsNullOrEmpty(EstadoTicket) || String.IsNullOrEmpty(Solucion) || String.IsNullOrEmpty(Reporte) || String.IsNullOrEmpty(Equipo) || String.IsNullOrEmpty(Cliente) || String.IsNullOrEmpty(DetalleEquipo) || String.IsNullOrEmpty(DetalleProblema))
             {
                 core.messageBox(mensajeBox);
             }
             else
             {
-                bool result = EstadoPago.Equals("Seleccione");
+                bool result = EstadoTicket.Equals("Seleccione");
                 if (result)
                 {
-                    core.messageBox("Favor de seleccionar un estado de pago valido.");
+                    core.messageBox("Favor de seleccionar un estado de ticket valido.");
                 }
                 else
                 {
                     //Se agrega el registro de usuario//
-                    pagosDA.Modificar(RecuperarInformación());
+                    ticketsDA.Modificar(RecuperarInformación());
                     LimpiarEntradas();
                 }
             }
@@ -245,7 +259,7 @@ namespace RecoinssoFinal.Presentación.Reportes
             switch (Mensaje)
             {
                 case DialogResult.Yes:
-                    pagosDA.Eliminar(RecuperarInformación());
+                    ticketsDA.Eliminar(RecuperarInformación());
                     LimpiarEntradas();
                     RefrescarGrid();
                     break;
@@ -266,9 +280,9 @@ namespace RecoinssoFinal.Presentación.Reportes
             btnEliminar.Enabled = true;
         }
 
-        private void cbxEstadoPago_Click(object sender, EventArgs e)
+        private void cbxEstadoTicket_Click(object sender, EventArgs e)
         {
-            CargarComboboxEstadoPago();
+            CargarComboboxEstadoTicket();
         }
 
     }

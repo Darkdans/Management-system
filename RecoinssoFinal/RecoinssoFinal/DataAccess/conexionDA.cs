@@ -85,6 +85,25 @@ namespace RecoinssoFinal.DataAccess
             }
         }
 
+        public void GetPuestoSQL(SqlCommand sqlCommand)
+        {
+            DataSet DS = new DataSet();
+            SqlDataAdapter Adaptador = new SqlDataAdapter();
+            SqlCommand Comando = new SqlCommand();
+            Comando = sqlCommand;
+            Comando.Connection = EstablecerConexión();
+            Adaptador.SelectCommand = Comando;
+            Conexion.Open();
+            Adaptador.Fill(DS);
+            SqlDataReader registro = Comando.ExecuteReader();
+            if (registro.HasRows)
+            {
+                registro.Read();
+                //registro["Columna"];
+            }
+            Conexion.Close();
+        }
+
         public void logins(LoginLB loginLB)
         {
             try

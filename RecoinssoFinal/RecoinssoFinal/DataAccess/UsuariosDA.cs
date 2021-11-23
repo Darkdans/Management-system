@@ -38,8 +38,8 @@ namespace RecoinssoFinal.DataAccess
         public bool Registrarse(UsuariosLB objUsuario)
         {
             string mensajeBox = "Se ha agregado los datos correctamente.";
-            SqlCommand SQLComando = new SqlCommand("INSERT INTO [dbo].[Usuarios] (usuario, nombre, apellidoMaterno, apellidoPaterno, password, correo, telefono)" +
-                "VALUES(@Usuario, @Nombre, @ApellidoPaterno, @ApellidoMaterno, @Password, @Correo, @Telefono)");
+            SqlCommand SQLComando = new SqlCommand("INSERT INTO [dbo].[Usuarios] (usuario, nombre, apellidoMaterno, apellidoPaterno, password, correo, telefono, puestoID)" +
+                "VALUES(@Usuario, @Nombre, @ApellidoPaterno, @ApellidoMaterno, @Password, @Correo, @Telefono, @ID_puesto)");
             SQLComando.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = objUsuario.usuario;
             SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objUsuario.nombre;
             SQLComando.Parameters.Add("@ApellidoMaterno", SqlDbType.VarChar).Value = objUsuario.apellidoMaterno;
@@ -47,6 +47,7 @@ namespace RecoinssoFinal.DataAccess
             SQLComando.Parameters.Add("@Password", SqlDbType.VarChar).Value = objUsuario.password;
             SQLComando.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = objUsuario.telefono;
             SQLComando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = objUsuario.correo;
+            SQLComando.Parameters.Add("@ID_puesto", SqlDbType.Int).Value = 1; //Sin permisos//
             return conexion.ejecturarComandosSinRetornoDatos(SQLComando, mensajeBox);
         }
 

@@ -33,3 +33,5 @@ C:\Users\LEO\Desktop\Repositorios\Darkdans\Management-system\RecoinssoFinal\Reco
 C:\Users\LEO\Desktop\Repositorios\Darkdans\Management-system\RecoinssoFinal\RecoinssoFinal\obj\Debug\RecoinssoFinal.Presentación.Reportes.Reporte.resources
 C:\Users\LEO\Desktop\Repositorios\Darkdans\Management-system\RecoinssoFinal\RecoinssoFinal\obj\Debug\RecoinssoFinal.Presentación.Reportes.Soluciones.resources
 C:\Users\LEO\Desktop\Repositorios\Darkdans\Management-system\RecoinssoFinal\RecoinssoFinal\obj\Debug\RecoinssoFinal.Presentación.Reportes.Pagos.resources
+C:\Users\LEO\Desktop\Repositorios\Darkdans\Management-system\RecoinssoFinal\RecoinssoFinal\obj\Debug\RecoinssoFinal.Presentación.Ticket.Tickets.resources
+C:\Users\LEO\Desktop\Repositorios\Darkdans\Management-system\RecoinssoFinal\RecoinssoFinal\obj\Debug\RecoinssoFinal.Presentación.Alarmas.InfoAlarmas.resources

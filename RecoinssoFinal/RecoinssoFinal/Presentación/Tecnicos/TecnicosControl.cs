@@ -52,9 +52,9 @@ namespace RecoinssoFinal.Presentación.Tecnicos
                 txtNombre.Text = dgvTecnicos.Rows[indice].Cells[1].Value.ToString();
                 txtTelefono.Text = dgvTecnicos.Rows[indice].Cells[2].Value.ToString();
                 txtCorreo.Text = dgvTecnicos.Rows[indice].Cells[3].Value.ToString();
-                txtRFC.Text = dgvTecnicos.Rows[indice].Cells[4].Value.ToString();
-                txtEspecialidad.Text = dgvTecnicos.Rows[indice].Cells[5].Value.ToString();
-                txtPuesto.Text = dgvTecnicos.Rows[indice].Cells[6].Value.ToString();
+                txtEspecialidad.Text = dgvTecnicos.Rows[indice].Cells[4].Value.ToString();
+                txtPuesto.Text = dgvTecnicos.Rows[indice].Cells[5].Value.ToString();
+                txtRFC.Text = dgvTecnicos.Rows[indice].Cells[6].Value.ToString();
                 PictureFoto.Image = null;
                 DataGridViewImageCell Ima = dgvTecnicos.Rows[indice].Cells[7] as DataGridViewImageCell;
                 try

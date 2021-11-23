@@ -27,12 +27,13 @@ namespace RecoinssoFinal.Presentación.Clientes
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            string DescripcionEquipo = txtDescripcionEquipo.Text;
             string Nombre = txtNombre.Text;
             string Telefono = txtTelefono.Text;
             string Correo = txtCorreo.Text;
             string Domicilio = txtDomicilio.Text;
             string Equipo =  txtEquipo.Text;
-            if (String.IsNullOrEmpty(Nombre) || String.IsNullOrEmpty(Telefono) || String.IsNullOrEmpty(Correo) || String.IsNullOrEmpty(Domicilio) || String.IsNullOrEmpty(Equipo))
+            if (String.IsNullOrEmpty(DescripcionEquipo) || String.IsNullOrEmpty(Nombre) || String.IsNullOrEmpty(Telefono) || String.IsNullOrEmpty(Correo) || String.IsNullOrEmpty(Domicilio) || String.IsNullOrEmpty(Equipo))
             {
                 core.messageBox(mensajeBox);
             }
@@ -47,6 +48,7 @@ namespace RecoinssoFinal.Presentación.Clientes
         {
             //Se recuperan los valores insertados en la interfaz gráfica y se pasan en un objeto//
             ClientesLB clientesLB = new ClientesLB();
+            clientesLB.detalleEquipo = txtDescripcionEquipo.Text;
             clientesLB.nombre = txtNombre.Text;
             clientesLB.telefono = txtTelefono.Text;
             clientesLB.correo = txtCorreo.Text;
@@ -62,7 +64,8 @@ namespace RecoinssoFinal.Presentación.Clientes
             txtNombre.Text = "";
             txtCorreo.Text = "";
             txtEquipo.Text = "";
-            txtDomicilio.Text = ""; 
+            txtDomicilio.Text = "";
+            txtDescripcionEquipo.Text = "";
             PictureFoto.Image = null;
         }
 

@@ -42,6 +42,8 @@
             this.btnAgregarImagen = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtDias = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SubpanelIzquierdo.SuspendLayout();
@@ -99,7 +101,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(23, 87);
+            this.label3.Location = new System.Drawing.Point(20, 134);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
             this.label3.Size = new System.Drawing.Size(81, 28);
@@ -138,6 +140,8 @@
             // 
             // SubpanelIzquierdo
             // 
+            this.SubpanelIzquierdo.Controls.Add(this.txtDias);
+            this.SubpanelIzquierdo.Controls.Add(this.label2);
             this.SubpanelIzquierdo.Controls.Add(this.PictureFoto);
             this.SubpanelIzquierdo.Controls.Add(this.txtDescripcion);
             this.SubpanelIzquierdo.Controls.Add(this.btnAgregarImagen);
@@ -167,7 +171,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(23, 118);
+            this.txtDescripcion.Location = new System.Drawing.Point(23, 165);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(250, 121);
             this.txtDescripcion.TabIndex = 48;
@@ -220,6 +224,24 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Costo:";
             // 
+            // txtDias
+            // 
+            this.txtDias.Location = new System.Drawing.Point(23, 111);
+            this.txtDias.Name = "txtDias";
+            this.txtDias.Size = new System.Drawing.Size(250, 20);
+            this.txtDias.TabIndex = 53;
+            this.txtDias.Tag = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(20, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Tiempo (Días):";
+            // 
             // ServiciosAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,5 +280,7 @@
         private System.Windows.Forms.Button btnAgregarImagen;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.RichTextBox txtDescripcion;
+        public System.Windows.Forms.TextBox txtDias;
+        private System.Windows.Forms.Label label2;
     }
 }

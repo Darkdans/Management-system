@@ -28,9 +28,10 @@ namespace RecoinssoFinal.Presentación.Servicios
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string Nombre = txtNombre.Text;
+            string Dias = txtDias.Text;
             string Precio = txtCosto.Text;
             string Descripcion = txtDescripcion.Text;
-            if (String.IsNullOrEmpty(Nombre) || String.IsNullOrEmpty(Precio) || String.IsNullOrEmpty(Descripcion))
+            if (String.IsNullOrEmpty(Dias) || String.IsNullOrEmpty(Nombre) || String.IsNullOrEmpty(Precio) || String.IsNullOrEmpty(Descripcion))
             {
                 core.messageBox(mensajeBox);
             }
@@ -55,6 +56,8 @@ namespace RecoinssoFinal.Presentación.Servicios
             serviciosLB.nombre = txtNombre.Text;
             serviciosLB.costo = txtCosto.Text;
             serviciosLB.descripcion = txtDescripcion.Text;
+            int dias = 0; int.TryParse(txtDias.Text, out dias);
+            serviciosLB.dias = dias;
             serviciosLB.Foto = imagenByte;
             return serviciosLB;
         }
@@ -64,6 +67,7 @@ namespace RecoinssoFinal.Presentación.Servicios
             txtNombre.Text = "";
             txtCosto.Text = "";
             txtDescripcion.Text = "";
+            txtDias.Text = "";
             PictureFoto.Image = null;
         }
 

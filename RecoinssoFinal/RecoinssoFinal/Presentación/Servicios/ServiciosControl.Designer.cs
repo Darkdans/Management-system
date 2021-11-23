@@ -33,6 +33,8 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtDias = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -57,7 +57,7 @@
             this.dgvServicios.AllowUserToAddRows = false;
             this.dgvServicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServicios.Location = new System.Drawing.Point(28, 365);
+            this.dgvServicios.Location = new System.Drawing.Point(28, 331);
             this.dgvServicios.Name = "dgvServicios";
             this.dgvServicios.Size = new System.Drawing.Size(535, 192);
             this.dgvServicios.TabIndex = 37;
@@ -72,7 +72,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnModificar.Location = new System.Drawing.Point(402, 588);
+            this.btnModificar.Location = new System.Drawing.Point(402, 538);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(150, 25);
             this.btnModificar.TabIndex = 36;
@@ -107,7 +107,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtDias);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtDescripcion);
             this.panel2.Controls.Add(this.btnAgregarImagen);
@@ -125,8 +125,26 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 53);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(586, 647);
+            this.panel2.Size = new System.Drawing.Size(586, 591);
             this.panel2.TabIndex = 52;
+            // 
+            // txtDias
+            // 
+            this.txtDias.Location = new System.Drawing.Point(28, 107);
+            this.txtDias.Name = "txtDias";
+            this.txtDias.Size = new System.Drawing.Size(250, 20);
+            this.txtDias.TabIndex = 51;
+            this.txtDias.Tag = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(25, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "*Tiempo (Días):";
             // 
             // txtDescripcion
             // 
@@ -144,7 +162,7 @@
             this.btnAgregarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarImagen.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAgregarImagen.Location = new System.Drawing.Point(370, 290);
+            this.btnAgregarImagen.Location = new System.Drawing.Point(366, 244);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(150, 25);
             this.btnAgregarImagen.TabIndex = 48;
@@ -170,7 +188,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEliminar.Location = new System.Drawing.Point(218, 588);
+            this.btnEliminar.Location = new System.Drawing.Point(218, 538);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(150, 25);
             this.btnEliminar.TabIndex = 45;
@@ -194,7 +212,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnLimpiar.Location = new System.Drawing.Point(28, 588);
+            this.btnLimpiar.Location = new System.Drawing.Point(28, 538);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(150, 25);
             this.btnLimpiar.TabIndex = 44;
@@ -205,7 +223,7 @@
             // PictureFoto
             // 
             this.PictureFoto.BackColor = System.Drawing.Color.White;
-            this.PictureFoto.Location = new System.Drawing.Point(370, 153);
+            this.PictureFoto.Location = new System.Drawing.Point(366, 107);
             this.PictureFoto.Name = "PictureFoto";
             this.PictureFoto.Size = new System.Drawing.Size(150, 131);
             this.PictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -249,30 +267,11 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "Nombre:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(28, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 20);
-            this.textBox1.TabIndex = 51;
-            this.textBox1.Tag = "";
-            this.textBox1.Text = "Rango de tiempo aproximado para alarmas";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(25, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "*Tiempo(Días):";
-            // 
             // ServiciosControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 700);
+            this.ClientSize = new System.Drawing.Size(586, 637);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -306,7 +305,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregarImagen;
         private System.Windows.Forms.RichTextBox txtDescripcion;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtDias;
         private System.Windows.Forms.Label label4;
     }
 }

@@ -14,6 +14,8 @@ using RecoinssoFinal.Presentación.Tecnicos;
 using RecoinssoFinal.Presentación.Reportes;
 using RecoinssoFinal.DataAccess;
 using RecoinssoFinal.Logica;
+using RecoinssoFinal.Presentación.Ticket;
+using RecoinssoFinal.Presentación.Alarmas;
 
 namespace RecoinssoFinal.Presentación
 {
@@ -94,9 +96,9 @@ namespace RecoinssoFinal.Presentación
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            /*this.WindowState = FormWindowState.Normal;
             btnMaximizar.Visible = true;
-            btnRestaurar.Visible = false;
+            btnRestaurar.Visible = false;*/
         }
 
         private void btnServicios_Click(object sender, EventArgs e)
@@ -165,11 +167,8 @@ namespace RecoinssoFinal.Presentación
             else if (ID_puesto == 3)
             {
                 lblPuesto.Text = "Puesto: Primer Nivel";
-                SubMenuServicios.Height = 40;
-                btnControlServicios.Visible = false;
-
-                SubPanelClientes.Height = 40;
-                btnControlClientes.Visible = false;
+                btnServicios.Visible = false;
+                btnClientes.Visible = false;
 
                 btnTecnicos.Visible = false;
                 btnAlarmas.Visible = false;
@@ -178,6 +177,8 @@ namespace RecoinssoFinal.Presentación
             else if (ID_puesto == 4)
             {
                 lblPuesto.Text = "Puesto: Segundo Nivel";
+                btnServicios.Visible = false;
+                btnClientes.Visible = false;
                 btnControlTecnicos.Visible = false;
                 SubMenuTecnicos.Height = 40;
                 btnUsuarios.Visible = false;
@@ -245,6 +246,14 @@ namespace RecoinssoFinal.Presentación
             AbrirFormHija(new Pagos());
         }
 
-   
+        private void btnTickets_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Tickets());
+        }
+
+        private void btnAlarmas_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new InfoAlarmas());
+        }
     }
 }

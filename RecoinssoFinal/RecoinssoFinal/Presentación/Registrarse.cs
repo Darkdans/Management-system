@@ -33,15 +33,20 @@ namespace RecoinssoFinal.Presentación
             objUsuarioLB.telefono = txtTelefono.Text;
             objUsuarioLB.correo = txtCorreo.Text;
             return objUsuarioLB;
-    }
-        private void linklblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            LoginForm loginForm = new LoginForm();
-            this.Hide();
-            loginForm.Show();
         }
 
-        private void btnRegistrarse_Click(object sender, EventArgs e)
+        public void LimpiarEntradas() {
+            txtUsuario.Text = "";
+            txtNombre.Text = "";
+            txtApellidoPaterno.Text = "";
+            txtApellidoMaterno.Text = "";
+            txtContrasena.Text = "";
+            txtRepetirContrasena.Text = "";
+            txtTelefono.Text = "";
+            txtCorreo.Text = "";
+        }
+
+        private void btnRegistrarse_Click_1(object sender, EventArgs e)
         {
             string Usuario = txtUsuario.Text;
             string Nombre = txtNombre.Text;
@@ -59,35 +64,33 @@ namespace RecoinssoFinal.Presentación
             else
             {
                 bool result = Contraseña.Equals(RepetirContraseña);
-                if (result) {
+                if (result)
+                {
                     objnewUserDA.Registrarse(RecuperarInformación());
                     LimpiarEntradas();
                     core.messageBox("Sera enviado a la ventana de inicio de sesión.");
                     LoginForm loginForm = new LoginForm();
                     this.Hide();
                     loginForm.Show();
-                } else
+                }
+                else
                 {
                     core.messageBox("Las contraseñas no coinciden, intentalo de nuevo.");
                 }
-                
+
             }
         }
 
-        public void LimpiarEntradas() {
-            txtUsuario.Text = "";
-            txtNombre.Text = "";
-            txtApellidoPaterno.Text = "";
-            txtApellidoMaterno.Text = "";
-            txtContrasena.Text = "";
-            txtRepetirContrasena.Text = "";
-            txtTelefono.Text = "";
-            txtCorreo.Text = "";
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             LimpiarEntradas();
+        }
+
+        private void linklblLogin_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+             LoginForm loginForm = new LoginForm();
+            this.Hide();
+            loginForm.Show();
         }
     }
 }

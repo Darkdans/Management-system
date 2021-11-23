@@ -15,5 +15,6 @@ namespace RecoinssoFinal.Logica
         public string equipo { get; set; }
         public byte[] Foto { get; set; }
         public string direccion { get; set; }
+        public string detalleEquipo { get; set; }
     }
 }

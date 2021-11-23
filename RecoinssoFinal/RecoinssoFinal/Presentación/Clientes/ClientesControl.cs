@@ -36,6 +36,7 @@ namespace RecoinssoFinal.Presentación.Clientes
             dgvClientes.Columns[3].HeaderText = "Correo";
             dgvClientes.Columns[4].HeaderText = "Equipo";
             dgvClientes.Columns[6].HeaderText = "Dirección";
+            dgvClientes.Columns[7].HeaderText = "Descripción del equipo";
         }
 
         private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
@@ -66,6 +67,7 @@ namespace RecoinssoFinal.Presentación.Clientes
                     Console.WriteLine("Cannot convert a Null to a Byte.");
                 }
                 txtDomicilio.Text = dgvClientes.Rows[indice].Cells[6].Value.ToString();
+                txtDescripcionEquipo.Text = dgvClientes.Rows[indice].Cells[7].Value.ToString();
             }
         }
         private ClientesLB RecuperarInformación()
@@ -80,6 +82,7 @@ namespace RecoinssoFinal.Presentación.Clientes
             clientesLB.equipo = txtEquipo.Text;
             clientesLB.direccion = txtDomicilio.Text;
             clientesLB.Foto = imagenByte;
+            clientesLB.detalleEquipo = txtDescripcionEquipo.Text;
             return clientesLB;
         }
         private void btnModificar_Click(object sender, EventArgs e)
@@ -123,6 +126,7 @@ namespace RecoinssoFinal.Presentación.Clientes
             txtEquipo.Text = "";
             txtDomicilio.Text = "";
             PictureFoto.Image = null;
+            txtDescripcionEquipo.Text = "";
             //Activar/desactivar botones según lo que se requiera //
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;

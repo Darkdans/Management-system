@@ -48,6 +48,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDescripcionEquipo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureFoto)).BeginInit();
@@ -59,10 +62,10 @@
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(41, 295);
+            this.dgvClientes.Location = new System.Drawing.Point(41, 355);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(518, 214);
-            this.dgvClientes.TabIndex = 4;
+            this.dgvClientes.Size = new System.Drawing.Size(518, 220);
+            this.dgvClientes.TabIndex = 10;
             this.dgvClientes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
             // 
             // lblTitulo
@@ -97,10 +100,10 @@
             this.btnAgregarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarImagen.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAgregarImagen.Location = new System.Drawing.Point(371, 174);
+            this.btnAgregarImagen.Location = new System.Drawing.Point(383, 186);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(150, 25);
-            this.btnAgregarImagen.TabIndex = 58;
+            this.btnAgregarImagen.TabIndex = 7;
             this.btnAgregarImagen.Text = "Examinar";
             this.btnAgregarImagen.UseVisualStyleBackColor = false;
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
@@ -114,10 +117,10 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEliminar.Location = new System.Drawing.Point(231, 529);
+            this.btnEliminar.Location = new System.Drawing.Point(231, 595);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(150, 25);
-            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -130,10 +133,10 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnLimpiar.Location = new System.Drawing.Point(41, 529);
+            this.btnLimpiar.Location = new System.Drawing.Point(41, 595);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(150, 25);
-            this.btnLimpiar.TabIndex = 6;
+            this.btnLimpiar.TabIndex = 8;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -141,7 +144,7 @@
             // PictureFoto
             // 
             this.PictureFoto.BackColor = System.Drawing.Color.White;
-            this.PictureFoto.Location = new System.Drawing.Point(371, 37);
+            this.PictureFoto.Location = new System.Drawing.Point(383, 46);
             this.PictureFoto.Name = "PictureFoto";
             this.PictureFoto.Size = new System.Drawing.Size(150, 131);
             this.PictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,10 +160,10 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnModificar.Location = new System.Drawing.Point(409, 529);
+            this.btnModificar.Location = new System.Drawing.Point(409, 595);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(150, 25);
-            this.btnModificar.TabIndex = 8;
+            this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -168,6 +171,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panel2.Controls.Add(this.txtDescripcionEquipo);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtDomicilio);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.labelID);
@@ -193,16 +199,16 @@
             // 
             // txtDomicilio
             // 
-            this.txtDomicilio.Location = new System.Drawing.Point(41, 199);
+            this.txtDomicilio.Location = new System.Drawing.Point(41, 259);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(250, 20);
-            this.txtDomicilio.TabIndex = 4;
+            this.txtDomicilio.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(38, 183);
+            this.label4.Location = new System.Drawing.Point(38, 243);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 69;
@@ -211,7 +217,7 @@
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(377, 21);
+            this.labelID.Location = new System.Drawing.Point(394, 30);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(0, 13);
             this.labelID.TabIndex = 67;
@@ -226,10 +232,10 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(41, 251);
+            this.txtCorreo.Location = new System.Drawing.Point(41, 311);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(518, 20);
-            this.txtCorreo.TabIndex = 5;
+            this.txtCorreo.Size = new System.Drawing.Size(250, 20);
+            this.txtCorreo.TabIndex = 6;
             // 
             // txtEquipo
             // 
@@ -242,11 +248,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(38, 130);
+            this.label6.Location = new System.Drawing.Point(400, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 66;
-            this.label6.Text = "Equipo";
+            this.label6.Text = "Imagen  de equipo:";
             // 
             // txtNombre
             // 
@@ -259,7 +265,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(38, 235);
+            this.label3.Location = new System.Drawing.Point(38, 295);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 63;
@@ -285,11 +291,38 @@
             this.label1.TabIndex = 59;
             this.label1.Text = "Nombre:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(38, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 73;
+            this.label7.Text = "Equipo:";
+            // 
+            // txtDescripcionEquipo
+            // 
+            this.txtDescripcionEquipo.Location = new System.Drawing.Point(41, 203);
+            this.txtDescripcionEquipo.Name = "txtDescripcionEquipo";
+            this.txtDescripcionEquipo.Size = new System.Drawing.Size(250, 20);
+            this.txtDescripcionEquipo.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(38, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 13);
+            this.label5.TabIndex = 75;
+            this.label5.Text = "*Descripción del equipo";
+            // 
             // ClientesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 647);
+            this.ClientSize = new System.Drawing.Size(586, 700);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -327,5 +360,8 @@
         private System.Windows.Forms.Label labelID;
         public System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox txtDescripcionEquipo;
+        private System.Windows.Forms.Label label5;
     }
 }

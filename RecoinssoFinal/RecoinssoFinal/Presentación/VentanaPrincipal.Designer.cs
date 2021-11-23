@@ -203,7 +203,7 @@
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = global::RecoinssoFinal.Properties.Resources.Usuario;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 674);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 708);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnUsuarios.Size = new System.Drawing.Size(220, 40);
@@ -227,7 +227,7 @@
             this.btnAlarmas.ForeColor = System.Drawing.Color.White;
             this.btnAlarmas.Image = global::RecoinssoFinal.Properties.Resources.Alarmas;
             this.btnAlarmas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlarmas.Location = new System.Drawing.Point(0, 634);
+            this.btnAlarmas.Location = new System.Drawing.Point(0, 668);
             this.btnAlarmas.Name = "btnAlarmas";
             this.btnAlarmas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAlarmas.Size = new System.Drawing.Size(220, 40);
@@ -236,13 +236,14 @@
             this.btnAlarmas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlarmas.UseCompatibleTextRendering = true;
             this.btnAlarmas.UseVisualStyleBackColor = false;
+            this.btnAlarmas.Click += new System.EventHandler(this.btnAlarmas_Click);
             // 
             // SubMenuReportes
             // 
             this.SubMenuReportes.Controls.Add(this.btnAltaSoluciones);
             this.SubMenuReportes.Controls.Add(this.btnAltaReportes);
             this.SubMenuReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubMenuReportes.Location = new System.Drawing.Point(0, 554);
+            this.SubMenuReportes.Location = new System.Drawing.Point(0, 588);
             this.SubMenuReportes.Name = "SubMenuReportes";
             this.SubMenuReportes.Size = new System.Drawing.Size(220, 80);
             this.SubMenuReportes.TabIndex = 13;
@@ -308,7 +309,7 @@
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Image = global::RecoinssoFinal.Properties.Resources.Reporte;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 514);
+            this.btnReportes.Location = new System.Drawing.Point(0, 548);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnReportes.Size = new System.Drawing.Size(220, 40);
@@ -332,7 +333,7 @@
             this.btnPagos.ForeColor = System.Drawing.Color.White;
             this.btnPagos.Image = global::RecoinssoFinal.Properties.Resources.Pagos;
             this.btnPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagos.Location = new System.Drawing.Point(0, 474);
+            this.btnPagos.Location = new System.Drawing.Point(0, 508);
             this.btnPagos.Name = "btnPagos";
             this.btnPagos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnPagos.Size = new System.Drawing.Size(220, 40);
@@ -356,7 +357,7 @@
             this.btnTickets.ForeColor = System.Drawing.Color.White;
             this.btnTickets.Image = global::RecoinssoFinal.Properties.Resources.Ticket;
             this.btnTickets.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTickets.Location = new System.Drawing.Point(0, 434);
+            this.btnTickets.Location = new System.Drawing.Point(0, 468);
             this.btnTickets.Name = "btnTickets";
             this.btnTickets.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnTickets.Size = new System.Drawing.Size(220, 40);
@@ -365,13 +366,14 @@
             this.btnTickets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTickets.UseCompatibleTextRendering = true;
             this.btnTickets.UseVisualStyleBackColor = false;
+            this.btnTickets.Click += new System.EventHandler(this.btnTickets_Click);
             // 
             // SubMenuTecnicos
             // 
             this.SubMenuTecnicos.Controls.Add(this.btnControlTecnicos);
             this.SubMenuTecnicos.Controls.Add(this.btnAltaTecnicos);
             this.SubMenuTecnicos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubMenuTecnicos.Location = new System.Drawing.Point(0, 354);
+            this.SubMenuTecnicos.Location = new System.Drawing.Point(0, 388);
             this.SubMenuTecnicos.Name = "SubMenuTecnicos";
             this.SubMenuTecnicos.Size = new System.Drawing.Size(220, 80);
             this.SubMenuTecnicos.TabIndex = 0;
@@ -437,7 +439,7 @@
             this.btnTecnicos.ForeColor = System.Drawing.Color.White;
             this.btnTecnicos.Image = global::RecoinssoFinal.Properties.Resources.Técnicos;
             this.btnTecnicos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTecnicos.Location = new System.Drawing.Point(0, 314);
+            this.btnTecnicos.Location = new System.Drawing.Point(0, 348);
             this.btnTecnicos.Name = "btnTecnicos";
             this.btnTecnicos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnTecnicos.Size = new System.Drawing.Size(220, 40);
@@ -453,7 +455,7 @@
             this.SubPanelClientes.Controls.Add(this.btnControlClientes);
             this.SubPanelClientes.Controls.Add(this.btnAltaClientes);
             this.SubPanelClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelClientes.Location = new System.Drawing.Point(0, 234);
+            this.SubPanelClientes.Location = new System.Drawing.Point(0, 268);
             this.SubPanelClientes.Name = "SubPanelClientes";
             this.SubPanelClientes.Size = new System.Drawing.Size(220, 80);
             this.SubPanelClientes.TabIndex = 7;
@@ -519,7 +521,7 @@
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Image = global::RecoinssoFinal.Properties.Resources.Equipos;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 194);
+            this.btnClientes.Location = new System.Drawing.Point(0, 228);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnClientes.Size = new System.Drawing.Size(220, 40);
@@ -536,7 +538,7 @@
             this.SubMenuServicios.Controls.Add(this.btnControlServicios);
             this.SubMenuServicios.Controls.Add(this.btnAltaServicios);
             this.SubMenuServicios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubMenuServicios.Location = new System.Drawing.Point(0, 114);
+            this.SubMenuServicios.Location = new System.Drawing.Point(0, 148);
             this.SubMenuServicios.Name = "SubMenuServicios";
             this.SubMenuServicios.Size = new System.Drawing.Size(220, 80);
             this.SubMenuServicios.TabIndex = 0;
@@ -602,7 +604,7 @@
             this.btnServicios.ForeColor = System.Drawing.Color.White;
             this.btnServicios.Image = global::RecoinssoFinal.Properties.Resources.Servicios;
             this.btnServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServicios.Location = new System.Drawing.Point(0, 74);
+            this.btnServicios.Location = new System.Drawing.Point(0, 108);
             this.btnServicios.Name = "btnServicios";
             this.btnServicios.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnServicios.Size = new System.Drawing.Size(220, 40);
@@ -616,11 +618,13 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::RecoinssoFinal.Properties.Resources.logo;
+            this.pictureBox1.Image = global::RecoinssoFinal.Properties.Resources.Logox100;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 74);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pictureBox1.Size = new System.Drawing.Size(220, 108);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

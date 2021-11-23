@@ -204,5 +204,7 @@ namespace RecoinssoFinal.Presentación
         {
             CargarCombobox();
         }
+
+  
     }
 }

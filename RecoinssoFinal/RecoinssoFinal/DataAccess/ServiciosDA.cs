@@ -28,24 +28,26 @@ namespace RecoinssoFinal.DataAccess
         public bool Agregar(ServiciosLB objServiciosLB)
         {
             string mensajeBox = "Se ha agregado los datos correctamente.";
-            SqlCommand SQLComando = new SqlCommand("INSERT INTO Servicios (nombre, costo, descripcion, foto) VALUES (@Nombre, @Costo, @Descripcion, @Foto)");
+            SqlCommand SQLComando = new SqlCommand("INSERT INTO Servicios (nombre, costo, descripcion, foto, dias) VALUES (@Nombre, @Costo, @Descripcion, @Foto, @Dias)");
             SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objServiciosLB.nombre;
             SQLComando.Parameters.Add("@Costo", SqlDbType.VarChar).Value = objServiciosLB.costo;
             SQLComando.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = objServiciosLB.descripcion;
             SQLComando.Parameters.Add("@Foto", SqlDbType.Image).Value = objServiciosLB.Foto;
+            SQLComando.Parameters.Add("@Dias", SqlDbType.Int).Value = objServiciosLB.dias;
             return conexion.ejecturarComandosSinRetornoDatos(SQLComando, mensajeBox);
         }
 
         public bool Modificar(ServiciosLB objServiciosLB)
         {
             string mensajeBox = "Se ha modificado los datos correctamente.";
-            SqlCommand SQLComando = new SqlCommand("UPDATE Servicios SET nombre = @Nombre, costo = @Costo, descripcion = @Descripcion, foto = @Foto" +
+            SqlCommand SQLComando = new SqlCommand("UPDATE Servicios SET nombre = @Nombre, costo = @Costo, descripcion = @Descripcion, foto = @Foto, dias = @Dias" +
                 " WHERE [ID-servicios] = @ID");
             SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = objServiciosLB.ID;
             SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objServiciosLB.nombre;
             SQLComando.Parameters.Add("@Costo", SqlDbType.VarChar).Value = objServiciosLB.costo;
             SQLComando.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = objServiciosLB.descripcion;
             SQLComando.Parameters.Add("@Foto", SqlDbType.Image).Value = objServiciosLB.Foto;
+            SQLComando.Parameters.Add("@Dias", SqlDbType.Int).Value = objServiciosLB.dias;
             return conexion.ejecturarComandosSinRetornoDatos(SQLComando, mensajeBox);
         }
 

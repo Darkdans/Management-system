@@ -14,5 +14,6 @@ namespace RecoinssoFinal.Logica
         public string descripcion { get; set; }
         public DateTime tiempo { get; set; }
         public byte[] Foto { get; set; }
+        public int dias { get; set; }
     }
 }
